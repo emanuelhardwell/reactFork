@@ -12,4 +12,4 @@ const divRoot = document.querySelector("#root");
 ReactDOM.render(saludo, divRoot); */
 
 const divRoot = document.querySelector("#root");
-ReactDOM.render(<PrimerApp />, divRoot);
+ReactDOM.render(<PrimerApp saludo="hola soy goku" />, divRoot);
