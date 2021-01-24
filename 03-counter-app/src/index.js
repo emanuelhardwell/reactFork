@@ -2,14 +2,9 @@
 /*  */
 import React from "react";
 import ReactDOM from "react-dom";
-import PrimerApp from "./PrimerApp";
 import "./index.css";
-
-/* const saludo = <h1>Hola mundo ...welcome Emanuel</h1>;
-
-const divRoot = document.querySelector("#root");
-
-ReactDOM.render(saludo, divRoot); */
+import CounterApp from "./CounterApp";
 
 const divRoot = document.querySelector("#root");
-ReactDOM.render(<PrimerApp saludo="hola soy goku" />, divRoot);
+
+ReactDOM.render(<CounterApp value={5} />, divRoot);
