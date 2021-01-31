@@ -1,21 +1,10 @@
 /*  */
 import React, { useState } from "react";
 import { AddCategory } from "./AddCategory";
+import { GifGrid } from "./GifGrid";
 
 export const GifExpertApp = () => {
-  /*  const categorias = [
-    "One Push",
-    "Dragon Ball",
-    "Super Campeones",
-    "Pecados Capitales",
-  ]; */
-
-  const [categorias, setCategorias] = useState([
-    "One Push",
-    "Dragon Ball",
-    "Super Campeones",
-    "Pecados Capitales",
-  ]);
+  const [categorias, setCategorias] = useState(["One Punch"]);
 
   //const handleAdd = () => {
   /* Forma 1 de agregar */
@@ -27,14 +16,14 @@ export const GifExpertApp = () => {
   return (
     <>
       <h2>GifExpertApp</h2>
-      <AddCategory />
+      <AddCategory setCategorias={setCategorias} />
       <hr />
 
       {/* <button onClick={handleAdd}>Agregar</button> */}
       <ol>
         {categorias.map((category) => {
           /* el KEY no puede ser el indice */
-          return <li key={category}> {category}</li>;
+          return <GifGrid key={category} category={category} />;
         })}
       </ol>
     </>
