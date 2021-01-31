@@ -1,33 +1,25 @@
 /*  */
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { GifGridItem } from "./GifGridItem";
+import { getGifs } from "./helpers/getGif";
 
 export const GifGrid = ({ category }) => {
+  /*  */
+  const [image, setImage] = useState([]);
   /* con el useEffect defino cuando quiero que se ejecute una funcion  */
   useEffect(() => {
-    getGifs();
-  }, []);
-
-  const getGifs = async () => {
-    const url =
-      "http://api.giphy.com/v1/gifs/search?api_key=EMkLUTqDMhIksWGffC42PtHNNshPjgwj&q=One+Punch&limit=10";
-    const resp = await fetch(url);
-    const { data } = await resp.json();
-
-    const gifs = data.map((img) => {
-      return {
-        id: img.id,
-        title: img.title,
-        url: img.images?.downsized.url,
-      };
-    });
-    console.log(gifs);
-  };
-
-  getGifs();
+    getGifs(category).then((imgs) => setImage(imgs));
+  }, [category]);
 
   return (
     <div>
       <h1>{category}</h1>
+      {image.map((img) => {
+        /* return <li key={img.id}>{img.title} </li>; */
+        /* con el {...img} estamos indicando que se van a ir todos los datos y 
+         en el siguiente componenete los vamos a DESESTRUCTURAR} */
+        return <GifGridItem key={img.id} {...img} />;
+      })}
     </div>
   );
 };
