@@ -10,3 +10,18 @@ body {
   color: rgb(224, 212, 212);
   padding: 20px;
 }
+
+.card {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: rgb(94, 94, 94);
+  padding: 10px;
+  border-radius: 20px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.img {
+  width: 50%;
+}
