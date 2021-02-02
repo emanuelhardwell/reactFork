@@ -1,0 +1,8 @@
+/*  */
+/*  */
+body {
+  background: radial-gradient(rgb(87, 85, 85), rgb(27, 27, 27));
+  min-height: 100vh;
+  color: white;
+  padding: 100px;
+}
