@@ -3,31 +3,31 @@
 import { useState } from "react";
 
 export const useCounter = (numberInitial = 10) => {
-  const [state, setState] = useState(numberInitial);
+  const [counter, setCounter] = useState(numberInitial);
 
   const incrementar = () => {
-    setState(state + 1);
+    setCounter(counter + 1);
   };
 
   const decrementar = () => {
-    setState(state - 1);
+    setCounter(counter - 1);
   };
 
   const reset = () => {
-    setState(numberInitial);
+    setCounter(numberInitial);
   };
 
   /*  */
   const incrementarPro = (valor) => {
-    setState(state + valor);
+    setCounter(counter + valor);
   };
 
   const decrementarPro = (valor) => {
-    setState(state - valor);
+    setCounter(counter - valor);
   };
 
   return {
-    state,
+    counter,
     incrementar,
     decrementar,
     reset,
