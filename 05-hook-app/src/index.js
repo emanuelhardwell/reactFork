@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { RealExampleRef } from "./components/04-useRef/RealExampleRef";
+import { MemoHook } from "./components/06-memos/MemoHook";
+/* import { RealExampleRef } from "./components/04-useRef/RealExampleRef"; */
+/* import { Memorize } from "./components/06-memos/Memorize"; */
 /* import { FocusScreen } from "./components/04-useRef/FocusScreen"; */
 // import { FormWithCustomHook } from "./components/02-useEffect/FormWithCustomHook";
 /* import { MultipleCustomHooks } from "./components/03-examples/MultipleCustomHooks"; */
@@ -10,4 +12,4 @@ import { RealExampleRef } from "./components/04-useRef/RealExampleRef";
 
 /* import { HookApp } from "./HookApp"; */
 
-ReactDOM.render(<RealExampleRef />, document.getElementById("root"));
+ReactDOM.render(<MemoHook />, document.getElementById("root"));
