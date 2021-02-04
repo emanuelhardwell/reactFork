@@ -1,5 +1,5 @@
 /*  */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const useFetch = (url) => {
   /*  */
@@ -9,20 +9,36 @@ export const useFetch = (url) => {
     error: null,
   });
 
+  const isMounted = useRef(true);
+
+  /* useEfect para verificar los componentes desmontados */
+  useEffect(() => {
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
   useEffect(() => {
     setState({
       loading: true,
       error: null,
       data: null,
     });
+
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setState({
-          loading: false,
-          error: null,
-          data,
-        });
+        /*  */
+
+        if (isMounted.current) {
+          setState({
+            loading: false,
+            error: null,
+            data,
+          });
+        } else {
+          console.log("setState No se llamo");
+        }
       });
   }, [url]);
 
