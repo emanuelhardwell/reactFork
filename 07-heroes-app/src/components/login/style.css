@@ -9,7 +9,9 @@ body {
   width: 18rem;
   background: rgb(26, 25, 25) !important;
 }
-
-.img{
+.tarjetita2 {
+  background: rgb(126, 68, 68) !important;
+}
+.img {
   width: 50%;
 }
