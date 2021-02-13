@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Redirect, useParams } from "react-router-dom";
 import { getHeroeById } from "../../selectors/getHeroeById";
 
-export const HeroeScreen = () => {
+export const HeroeScreen = ({ history }) => {
   /*  */
   const { heroId } = useParams();
-  const hero = getHeroeById(heroId);
+
+  const hero = useMemo(() => getHeroeById(heroId), [heroId]);
+  /* const hero = getHeroeById(heroId); */
 
   if (!hero) {
     return <Redirect to="/" />;
   }
+
+  const handleReturn = () => {
+    if (history.length <= 2) {
+      history.push("/");
+    } else {
+      history.goBack();
+    }
+  };
 
   const {
     id,
@@ -24,7 +34,7 @@ export const HeroeScreen = () => {
     <div>
       <h1>Hero Screen</h1>
       <div className="row">
-        <div className="col-md-4">
+        <div className="col-md-4 m-1">
           <div className="card">
             <div className="card-body">
               <img
@@ -54,6 +64,9 @@ export const HeroeScreen = () => {
                   Characters: {characters}
                 </li>
               </ul>
+              <button className="btn btn-primary mt-3" onClick={handleReturn}>
+                Return ...
+              </button>
             </div>
           </div>
         </div>
