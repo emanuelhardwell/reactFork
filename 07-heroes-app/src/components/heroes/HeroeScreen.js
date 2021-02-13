@@ -34,7 +34,7 @@ export const HeroeScreen = ({ history }) => {
     <div>
       <h1>Hero Screen</h1>
       <div className="row">
-        <div className="col-md-4 m-1">
+        <div className="col-md-3 m-1 animate__animated animate__fadeInLeft">
           <div className="card">
             <div className="card-body">
               <img
@@ -46,7 +46,7 @@ export const HeroeScreen = ({ history }) => {
           </div>
         </div>
 
-        <div className="col-md-8">
+        <div className="col-md-8 animate__animated animate__fadeInDown">
           <div className="card">
             <div className="card-body">
               <h4 className="text-dark text-center"> {superhero} </h4>
