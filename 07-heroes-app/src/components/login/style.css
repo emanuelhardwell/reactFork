@@ -4,3 +4,12 @@ body {
   min-height: 100vh;
   color: white;
 }
+
+.tarjetita {
+  width: 18rem;
+  background: rgb(26, 25, 25) !important;
+}
+
+.img{
+  width: 50%;
+}
