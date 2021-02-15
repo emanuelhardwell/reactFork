@@ -6,6 +6,7 @@ import { MarvelScreen } from "../components/marvel/MarvelScreen";
 import { Navbar } from "../components/ui/Navbar";
 import { DashboardRoutes } from "./DashboardRoutes";
 import { PrivateRoute } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
 
 export const AppRouter = () => {
   /*  */
@@ -16,7 +17,13 @@ export const AppRouter = () => {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/login" component={LoginScreen} />
+          {/* <Route exact path="/login" component={LoginScreen} /> */}
+          <PublicRoute
+            exact
+            path="/login"
+            component={LoginScreen}
+            isNotAuthenticated={user.logged}
+          />
 
           <PrivateRoute
             path="/"
